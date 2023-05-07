@@ -33,5 +33,27 @@
       </select>
       <button type="submit" class="btn btn-outline-primary">Add</button>
     </form>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          {% for c in consumed_food %}
+          <!-- {{c.food_consumed}} -->
+          <br />
+          {{c.food_consumed.username.user}} {{c.food_consumed.name}}
+          <br />
+          Calories: {{c.food_consumed.calories}}
+          <br />
+          Protein: {{c.food_consumed.carbs}}
+          <br />
+          Fats: {{c.food_consumed.protein}}
+          <br />
+          Calories: {{c.food_consumed.fats}}
+          <br />
+          <!-- {{c}} -->
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </body>
 </html>
