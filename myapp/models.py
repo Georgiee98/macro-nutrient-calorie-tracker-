@@ -16,4 +16,4 @@ class Consume(models.Model):
     food_consumed = models.ForeignKey(Food, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.food_consumed.name}"
+        return f"{self.food_consumed.name}  {self.user}"
