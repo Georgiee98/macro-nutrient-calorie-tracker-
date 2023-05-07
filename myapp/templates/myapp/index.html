@@ -18,20 +18,21 @@
     ></script>
   </head>
   <body>
-    <form action="">
+    <form method="POST">
       {% csrf_token %}
       <select
-        name=""
-        id=""
+        name="food_consumed"
+        id="food_consumed"
         class="form-select"
         aria-label="Default select example"
       >
-        <option selected>Open this select menu</option>
+        <option value="{{food.name}}">Open this select menu</option>
         {% for food in foods %}
 
         <option value="">{{food.name}}</option>
         {% endfor %}
       </select>
+      <button type="submit" class="btn btn-outline-primary">Add</button>
     </form>
   </body>
 </html>
