@@ -19,3 +19,10 @@ def index(request):
     foods = Food.objects.all()
     consumed_food = Consume.objects.filter(user=request.user)
     return render(request, 'myapp/index.html', {'foods':foods, 'consumed_food': consumed_food})
+
+def delete_consume(request, pk):
+    consumed_food = Consume.objects.get(pk=pk)
+    if request.method == "POST":
+        consumed_food.delete()
+        return redirect('/')
+    return render(request, 'myapp/delete.html')
